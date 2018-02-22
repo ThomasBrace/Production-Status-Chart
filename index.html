@@ -1,6 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <script type='text/javascript'>//<![CDATA[
+
+</head>
+<body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div"></div>
+  <script type='text/javascript'>
 
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawCurveTypes);
@@ -79,12 +85,7 @@ function drawCurveTypes() {
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
-//]]>
 
 </script>
-</head>
-<body>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <div id="chart_div"></div>
 </body>
 </html>
