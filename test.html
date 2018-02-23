@@ -22,7 +22,7 @@ function handleQueryResponse(response) {
 
   var data = response.getDataTable();
   
- console.log(response.getDataTable());
+ return data;
  
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, { 
