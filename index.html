@@ -3,13 +3,30 @@
 <head>
 <title>Production Status</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="container">
-  <h2 style="font-family:sans-serif">Advanced Template Dashboard</h2>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="http://www.elateral.com">
+      <img src="assets/brand/ElateralLogoWO.svg" alt="" width="120">
+    </a>
+  </nav>
+
+
+<div id="container" class="container">
+  <div class="container">
+    <h1 class="display-3">Production Dashboard</h1>
+  </div>
+  <div class="container">
+    <h3 class="h2">Template production status</h3>
+    <p>Status of the advanced templates in production with Elateral. Week by week breakdown of templates completed and sent to the client for review.</p>
+  </div>
   <div id="status_chart"></div>
+  <div class="container">
+    <h3 class="h2">Template risk status</h3>
+    <p>Shows number of templates that of at risk for meeting the March 1 soft launch vs those on schedule or completed.</p>
+  </div>
   <div id="risk_chart">
     <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFd7hkAmZiJeSEknc4nQcA1tqSCbLrVl4VKcyuHO-KcotGdTRgCeVwAzF21YKJZXmpmswwPjI-y4IS/pubchart?oid=938876648&amp;format=interactive"></iframe>
   </div>
@@ -59,13 +76,13 @@ function drawCurveTypes() {
         legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}},
         height: 400,
         width: 900,
-        title: 'Advanced Production Status',
+        // title: 'Advanced Production Status',
         hAxis: {
           title: 'Week Commencing'
         },
-        vAxis: {
-          title: 'Template Count'
-        },
+        // vAxis: {
+        //   title: 'Template Count'
+        // },
         series: {
          		0: { color: '#acadaf' },
             1: { color: '#f72e00' },
