@@ -20,8 +20,8 @@ function handleQueryResponse(response) {
   });
   data.setValue(5, 1, 'March 1');
   data.setValue(5, 2, 'Risk free templates completed');
-  data.setValue(7, 1, 'March 22');
-  data.setValue(7, 2, 'Expected Completion');
+  data.setValue(8, 1, 'March 22');
+  data.setValue(8, 2, 'Expected Completion');
 
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, {
