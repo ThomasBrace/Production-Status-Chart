@@ -1,5 +1,5 @@
 function drawChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:G11&headers=1');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:G12&headers=1');
   query.send(handleQueryResponse);
 }
 
@@ -20,8 +20,8 @@ function handleQueryResponse(response) {
   });
   data.setValue(5, 1, 'March 1');
   data.setValue(5, 2, 'Risk free templates completed');
-  data.setValue(8, 1, 'March 22');
-  data.setValue(8, 2, 'Expected Completion');
+  // data.setValue(8, 1, 'March 22');
+  // data.setValue(8, 2, 'Expected Completion');
 
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, {
