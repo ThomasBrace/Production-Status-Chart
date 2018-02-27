@@ -26,7 +26,7 @@ function handleQueryResponse(response) {
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, {
     height: 400,
-    width: 900,
+    width: 996,
     annotations: {
       style: 'line'
      },
