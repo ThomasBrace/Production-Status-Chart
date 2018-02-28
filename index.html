@@ -15,21 +15,28 @@
 
 
 <div id="container" class="container">
-  <div class="container">
+  <div class="row">
     <h1 class="display-4">Production Dashboard</h1>
-  </div>
-  <div class="container">
+  </div><!-- .row -->
+
+  <div class="row">
     <h3 class="h2">Template production status</h3>
     <p>Status of the advanced templates in production with Elateral. Week by week breakdown of templates completed and sent to the client for review.</p>
+    <div id="combochart"><!-- Production Status Chart --></div>
+  </div><!-- .row -->
+  <div class="row">
+  <div class="col-md-6">
+      <h3 class="h2">Template risk status</h3>
+      <p>Shows number of advanced templates at risk for the March 1 soft launch vs those on schedule or completed.</p>
+      <div id="risk_chart"> <!-- "At Risk" Chart --></div>
   </div>
-  <div id="combochart"><!-- Production Status Chart --></div>
-
-  <div class="container">
-    <h3 class="h2">Template risk status</h3>
-    <p>Shows number of advanced templates at risk for the March 1 soft launch vs those on schedule or completed.</p>
+  <div class="col-md-6">
+      <h3 class="h2">Development status</h3>
+      <p>Shows where the templates are within the development stage</p>
+      <div id="status_chart"> <!-- Dev Status Chart --></div>
   </div>
-  <div id="risk_chart"> <!-- "At Risk" Chart --></div>
-</div>
+</div><!-- .row -->
+</div><!-- .container -->
 
 
 <script type="text/javascript" src="scripts/prod-status.js"></script>
@@ -37,6 +44,7 @@
     google.charts.load('current', {packages: ['corechart', 'line']});
     google.charts.setOnLoadCallback(drawChart);
     google.charts.setOnLoadCallback(drawRiskChart);
+    google.charts.setOnLoadCallback(drawStatusChart);
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

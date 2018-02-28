@@ -32,11 +32,11 @@ function handleQueryResponse(response) {
      },
      series: {
          0: { color: '#acadaf' },
-         1: { color: '#f72e00' },
-         2: { type: 'bars', color: '#0b911d' },
-         3: { lineDashStyle: [5, 2] ,color: '#f72e00' },
-         4: { color: '#591faf'},
-         5: { lineDashStyle: [5, 2] ,color: '#934ff9' }
+         1: { color: '#f15152' },
+         2: { type: 'bars', color: '#8fad88' },
+         3: { lineDashStyle: [5, 2] ,color: '#f15152' },
+         4: { color: '#1b4079'},
+         5: { lineDashStyle: [5, 2] ,color: '1b4079' }
      },
      legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}},
     });
@@ -61,7 +61,35 @@ function handleRiskQueryResponse(response) {
     slices: {
       0: { color: '#dddddd'},
       1: { color: '#cccccc'},
-      2: { color: '#f72e00'}
+      2: { color: '#f15152'}
+    }
+  });
+}
+
+function drawStatusChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C252');
+  query.send(handleStatusQueryResponse);
+}
+
+function handleStatusQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var statusData = response.getDataTable();
+  var statusChart = new google.visualization.PieChart(document.getElementById('status_chart'));
+  statusChart.draw(statusData, {
+    width: 600,
+    height: 400,
+    slices: {
+      6: { color: '#f15152'},
+      5: { color: '#cbdf90'},
+      4: { color: '#8fad88'},
+      3: { color: '#7f9c96'},
+      2: { color: '#4d7c8a'},
+      1: { color: '#1b4079'},
+      0: { color: '#dddddd'},
     }
   });
 }
