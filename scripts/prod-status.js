@@ -33,8 +33,8 @@ function handleQueryResponse(response) {
      series: {
          0: { color: '#cccccc' },
          1: { color: '#f15152' },
-         3: { type: 'bars', color: '#768e70' },
          2: { lineDashStyle: [5, 2] ,color: '#f15152' },
+         3: { type: 'bars', color: '#768e70' },
          4: { color: '#1b4079'},
          5: { lineDashStyle: [5, 2] ,color: '1b4079' }
      },
