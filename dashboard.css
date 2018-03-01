@@ -1,0 +1,34 @@
+/* Dashboard Specific CSS */
+
+div.metrics {
+  align-content: center;
+  text-align: center;
+}
+
+div.metric-single {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+div.metric-single span.metric-value {
+  font-size: 150%;
+}
+
+div.metric-negative {
+  color: #f15152;
+}
+
+div.metric-neutral {
+  color: #f5a65b;
+}
+
+div.metric-positive {
+  color: #4d7c8a;
+}
+
+div#overview_panel {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
