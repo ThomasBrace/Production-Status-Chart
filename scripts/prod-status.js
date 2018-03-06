@@ -93,3 +93,31 @@ function handleStatusQueryResponse(response) {
     }
   });
 }
+
+function drawStudioChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F252');
+  query.send(handleStudioQueryResponse);
+}
+
+function handleStudioQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var studioData = response.getDataTable();
+  var studioChart = new google.visualization.PieChart(document.getElementById('studio_chart'));
+  studioChart.draw(studioData, {
+    width: 600,
+    height: 400,
+    slices: {
+      6: { color: '#f15152' },
+      5: { color: '#cbdf90' },
+      4: { color: '#f5a65b' },
+      3: { color: '#768e70' },
+      2: { color: '#7f9c96' },
+      1: { color: '#4d7c8a' },
+      0: { color: '#1b4079' },
+    }
+  });
+}
