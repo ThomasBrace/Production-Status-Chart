@@ -25,8 +25,14 @@ function handleQueryResponse(response) {
 
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, {
-    height: 400,
-    width: 996,
+    height: '100%',
+    width: '100%',
+    // chartArea: {
+    //         left: "3%",
+    //         top: "3%",
+    //         height: "94%",
+    //         width: "94%"
+    //     },
     annotations: {
       style: 'line'
      },
