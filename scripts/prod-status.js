@@ -60,7 +60,7 @@ function handleRiskQueryResponse(response) {
     height: 400,
     slices: {
       0: { color: '#dddddd' },
-      1: { color: '#cccccc',offset: 0.15 },
+      1: { color: '#cccccc' },
       2: { color: '#f15152' }
     }
   });
