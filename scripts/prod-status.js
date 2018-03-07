@@ -139,7 +139,7 @@ function handleWaveQueryResponse(response) {
     width: '100%',
     slices: {
       1: { color: '#f15152' },
-      0: { color: '#cccccc' }
+      0: { color: '#dddddd' }
     },
     legend: 'none'
   });
@@ -163,7 +163,7 @@ function handleWavetwoQueryResponse(response) {
     width: '100%',
     slices: {
       1: { color: '#f15152' },
-      0: { color: '#cccccc' }
+      0: { color: '#dddddd' }
     },
     legend: 'none',
   });
@@ -187,7 +187,7 @@ function handleWavethreeQueryResponse(response) {
     width: '100%',
     slices: {
       1: { color: '#f15152' },
-      0: { color: '#cccccc' }
+      0: { color: '#dddddd' }
     },
     legend: 'none',
   });
