@@ -116,7 +116,7 @@ function handleStudioQueryResponse(response) {
       3: { color: '#7f9c96' },
       2: { color: '#4d7c8a' },
       1: { color: '#1b4079' },
-      0: { color: '#cccccc' }
+      0: { color: '#dddddd' }
     }
   });
 }
