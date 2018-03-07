@@ -23,29 +23,47 @@
   <div class="row">
       <div class="col-md-12">
         <h3 class="h2">Template Production Status</h3>
-        <p>Status of the advanced templates in production with Elateral. Week by week breakdown of templates completed and sent to the client for review.</p>
+        <p>Status of the 'Advanced' templates in production with Elateral. Week by week breakdown of templates completed and sent to the client for review.</p>
       </div>
-      <div id="combochart" class="chart"><!-- Production Status Chart --></div>
+      <div id="combochart" class="barchart"><!-- Production Status Chart --></div>
   </div><!-- .row -->
-  <div class="row">
+  <div class="clearfix"><hr></div>
+  <div class="row align-items-center">
     <div class="col-md-6">
         <h3 class="h2">Template Status</h3>
-        <p>Advanced templates completed for the March 1.</p>
+        <p>'Advanced' templates completed for the March 1.</p>
         <div id="risk_chart"> <!-- "At Risk" Chart --></div>
     </div>
-    <div class="col-md-6">
+    <div class="col">
+        <h3 class="h4">Wave One</h3>
+        <div id="waveone_chart" class="chart"><!-- Wave One Chart --></div>
+    </div>
+    <div class="col">
+        <h3 class="h4">Wave Two</h3>
+        <div id="wavetwo_chart" class="chart"><!-- Wave Two Chart --></div>
+    </div>
+    <div class="col">
+        <h3 class="h4">Wave Three</h3>
+        <div id="wavethree_chart" class="chart"><!-- Wave Three Chart --></div>
+    </div>
+    <div class="col-md-6 align-self-start">
         <h3 class="h2">Development Status</h3>
-        <p>Current status of the templates within the development stage</p>
+        <p>Current status of the 'Advanced' templates within the development stage</p>
         <div id="status_chart"> <!-- Dev Status Chart --></div>
     </div>
   </div>
+
+  <div class="row">
+
+  </div>
+  <div class="clearfix"><hr></div>
   <div class="row">
     <div class="col-md-12">
-        <h3 class="h2">Development Status - Additional</h3>
-        <p>Current status of the templates handed over from 'The Studio' on March 5.</p>
-        <div id="studio_chart"> <!-- Dev Status Chart --></div>
+        <h3 class="h4">Development Status - Additional</h3>
+        <p>Current status of 'Simple' & 'Medium' templates handed over from 'The Studio' on March 5.</p>
+        <div id="studio_chart"> <!-- Handed back Chart --></div>
     </div>
-</div><!-- .row -->
+  </div><!-- .row -->
 </div><!-- .container -->
 
 
@@ -56,6 +74,9 @@
     google.charts.setOnLoadCallback(drawRiskChart);
     google.charts.setOnLoadCallback(drawStatusChart);
     google.charts.setOnLoadCallback(drawStudioChart);
+    google.charts.setOnLoadCallback(drawWaveOneChart);
+    google.charts.setOnLoadCallback(drawWaveTwoChart);
+    google.charts.setOnLoadCallback(drawWaveThreeChart);
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

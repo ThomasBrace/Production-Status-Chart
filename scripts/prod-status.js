@@ -20,8 +20,6 @@ function handleQueryResponse(response) {
   });
   data.setValue(5, 1, 'March 1');
   data.setValue(5, 2, 'Risk free templates completed');
-  // data.setValue(8, 1, 'March 22');
-  // data.setValue(8, 2, 'Expected Completion');
 
   var chart = new google.visualization.LineChart(document.getElementById('combochart'));
   chart.draw(data, {
@@ -120,5 +118,77 @@ function handleStudioQueryResponse(response) {
       1: { color: '#1b4079' },
       0: { color: '#cccccc' }
     }
+  });
+}
+
+function drawWaveOneChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H247:I248');
+  query.send(handleWaveQueryResponse);
+}
+
+function handleWaveQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var waveOneData = response.getDataTable();
+  var waveOneChart = new google.visualization.PieChart(document.getElementById('waveone_chart'));
+  waveOneChart.draw(waveOneData, {
+    height: '100%',
+    width: '100%',
+    slices: {
+      1: { color: '#f15152' },
+      0: { color: '#cccccc' }
+    },
+    legend: 'none'
+  });
+}
+
+function drawWaveTwoChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H251:I252');
+  query.send(handleWavetwoQueryResponse);
+}
+
+function handleWavetwoQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var waveTwoData = response.getDataTable();
+  var waveTwoChart = new google.visualization.PieChart(document.getElementById('wavetwo_chart'));
+  waveTwoChart.draw(waveTwoData, {
+    height: '100%',
+    width: '100%',
+    slices: {
+      1: { color: '#f15152' },
+      0: { color: '#cccccc' }
+    },
+    legend: 'none',
+  });
+}
+
+function drawWaveThreeChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H255:I256');
+  query.send(handleWavethreeQueryResponse);
+}
+
+function handleWavethreeQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var waveThreeData = response.getDataTable();
+  var waveThreeChart = new  google.visualization.PieChart(document.getElementById('wavethree_chart'));
+  waveThreeChart.draw(waveThreeData, {
+    height: '100%',
+    width: '100%',
+    slices: {
+      1: { color: '#f15152' },
+      0: { color: '#cccccc' }
+    },
+    legend: 'none',
   });
 }

@@ -33,7 +33,12 @@ div#overview_panel {
   padding-bottom: 20px;
 }
 
-div.chart {
+div.barchart {
   width: 100%;
   min-height: 400px;
+}
+
+div.chart {
+  width: 100%;
+  min-height: 200px;
 }
