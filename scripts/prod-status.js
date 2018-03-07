@@ -27,12 +27,6 @@ function handleQueryResponse(response) {
   chart.draw(data, {
     height: '100%',
     width: '100%',
-    // chartArea: {
-    //         left: "3%",
-    //         top: "3%",
-    //         height: "94%",
-    //         width: "94%"
-    //     },
     annotations: {
       style: 'line'
      },
@@ -101,7 +95,7 @@ function handleStatusQueryResponse(response) {
 }
 
 function drawStudioChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F252');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F253');
   query.send(handleStudioQueryResponse);
 }
 
@@ -117,13 +111,14 @@ function handleStudioQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      6: { color: '#f15152' },
-      5: { color: '#cbdf90' },
-      4: { color: '#f5a65b' },
-      3: { color: '#768e70' },
-      2: { color: '#7f9c96' },
-      1: { color: '#4d7c8a' },
-      0: { color: '#1b4079' },
+      7: { color: '#f15152' },
+      6: { color: '#cbdf90' },
+      5: { color: '#f5a65b' },
+      4: { color: '#768e70' },
+      3: { color: '#7f9c96' },
+      2: { color: '#4d7c8a' },
+      1: { color: '#1b4079' },
+      0: { color: '#cccccc' }
     }
   });
 }
