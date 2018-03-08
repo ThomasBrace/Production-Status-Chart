@@ -65,7 +65,7 @@ function handleRiskQueryResponse(response) {
 }
 
 function drawStatusChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C252');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
   query.send(handleStatusQueryResponse);
 }
 
@@ -81,13 +81,14 @@ function handleStatusQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      6: { color: '#f15152' }, // On Hold
-      5: { color: '#cbdf90' }, // In Queue
-      4: { color: '#f5a65b' }, // Change Requests
-      3: { color: '#768e70' }, // Template Dev
+      7: { color: '#f15152' }, // On Hold
+      6: { color: '#cbdf90' }, // In Queue
+      5: { color: '#f5a65b' }, // Change Requests (Dev)
+      4: { color: '#768e70' }, // Template Dev
+      3: { color: '#b87b41' }, // Change Requests (QA)
       2: { color: '#7f9c96' }, // Template QA
       1: { color: '#4d7c8a' }, // AM Review
-      0: { color: '#1b4079' }, // Client Review
+      0: { color: '#1b4079' }  // Client Review
     }
   });
 }
