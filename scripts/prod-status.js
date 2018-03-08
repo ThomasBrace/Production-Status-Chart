@@ -34,7 +34,7 @@ function handleQueryResponse(response) {
          2: { lineDashStyle: [5, 2], color: '#f15152', visibleInLegend: false },
          3: { type: 'bars', color: '#768e70' },
          4: { color: '#1b4079'},
-         5: { lineDashStyle: [5, 2], color: '1b4079', visibleInLegend: false }
+         5: { lineDashStyle: [5, 2], color: '1b4079', visibleInLegend: true }
      },
      legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}}
     });
