@@ -81,13 +81,13 @@ function handleStatusQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      6: { color: '#f15152' },
-      5: { color: '#cbdf90' },
-      4: { color: '#f5a65b' },
-      3: { color: '#768e70' },
-      2: { color: '#7f9c96' },
-      1: { color: '#4d7c8a' },
-      0: { color: '#1b4079' },
+      6: { color: '#f15152' }, // On Hold
+      5: { color: '#cbdf90' }, // In Queue
+      4: { color: '#f5a65b' }, // Change Requests
+      3: { color: '#768e70' }, // Template Dev
+      2: { color: '#7f9c96' }, // Template QA
+      1: { color: '#4d7c8a' }, // AM Review
+      0: { color: '#1b4079' }, // Client Review
     }
   });
 }
@@ -109,14 +109,14 @@ function handleStudioQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      7: { color: '#f15152' },
-      6: { color: '#cbdf90' },
-      5: { color: '#f5a65b' },
-      4: { color: '#768e70' },
-      3: { color: '#7f9c96' },
-      2: { color: '#4d7c8a' },
-      1: { color: '#1b4079' },
-      0: { color: '#dddddd' }
+      7: { color: '#f15152' }, // On Hold
+      6: { color: '#cbdf90' }, // In Queue
+      5: { color: '#f5a65b' }, // Change Requests (Dev)
+      4: { color: '#768e70' }, // Template Dev
+      3: { color: '#b87b41' }, // Change Requests (QA)
+      2: { color: '#7f9c96' }, // Template QA
+      1: { color: '#4d7c8a' }, // AM Review
+      0: { color: '#1b4079' }  // Client Review
     }
   });
 }
@@ -138,8 +138,8 @@ function handleWaveQueryResponse(response) {
     height: '100%',
     width: '100%',
     series: {
-      1: { color: '#f15152' },
-      0: { color: '#dddddd' },
+      1: { color: '#f15152' }, // On Going
+      0: { color: '#dddddd' }, // Completed
     },
     // legend: 'none'
   });
