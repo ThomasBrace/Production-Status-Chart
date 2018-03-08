@@ -122,7 +122,7 @@ function handleStudioQueryResponse(response) {
 }
 
 function drawWaveOneChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H247:I248');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=K246:M249');
   query.send(handleWaveQueryResponse);
 }
 
@@ -133,15 +133,15 @@ function handleWaveQueryResponse(response) {
       }
 
   var waveOneData = response.getDataTable();
-  var waveOneChart = new google.visualization.PieChart(document.getElementById('waveone_chart'));
+  var waveOneChart = new google.visualization.BarChart(document.getElementById('waveone_chart'));
   waveOneChart.draw(waveOneData, {
     height: '100%',
     width: '100%',
-    slices: {
+    series: {
       1: { color: '#f15152' },
-      0: { color: '#dddddd' }
+      0: { color: '#dddddd' },
     },
-    legend: 'none'
+    // legend: 'none'
   });
 }
 
