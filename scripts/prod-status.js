@@ -34,7 +34,7 @@ function handleQueryResponse(response) {
          2: { lineDashStyle: [5, 2], color: '#f15152', visibleInLegend: false },
          3: { type: 'bars', color: '#768e70' },
          4: { color: '#1b4079'},
-         5: { lineDashStyle: [5, 2], color: '1b4079', visibleInLegend: false }
+         5: { lineDashStyle: [5, 2], color: '1b4079', visibleInLegend: true }
      },
      legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}}
     });
@@ -65,7 +65,7 @@ function handleRiskQueryResponse(response) {
 }
 
 function drawStatusChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C252');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
   query.send(handleStatusQueryResponse);
 }
 
@@ -81,13 +81,14 @@ function handleStatusQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      6: { color: '#f15152' },
-      5: { color: '#cbdf90' },
-      4: { color: '#f5a65b' },
-      3: { color: '#768e70' },
-      2: { color: '#7f9c96' },
-      1: { color: '#4d7c8a' },
-      0: { color: '#1b4079' },
+      7: { color: '#f15152' }, // On Hold
+      6: { color: '#cbdf90' }, // In Queue
+      5: { color: '#f5a65b' }, // Change Requests (Dev)
+      4: { color: '#768e70' }, // Template Dev
+      3: { color: '#b87b41' }, // Change Requests (QA)
+      2: { color: '#7f9c96' }, // Template QA
+      1: { color: '#4d7c8a' }, // AM Review
+      0: { color: '#1b4079' }  // Client Review
     }
   });
 }
@@ -109,14 +110,14 @@ function handleStudioQueryResponse(response) {
     width: 600,
     height: 400,
     slices: {
-      7: { color: '#f15152' },
-      6: { color: '#cbdf90' },
-      5: { color: '#f5a65b' },
-      4: { color: '#768e70' },
-      3: { color: '#7f9c96' },
-      2: { color: '#4d7c8a' },
-      1: { color: '#1b4079' },
-      0: { color: '#dddddd' }
+      7: { color: '#f15152' }, // On Hold
+      6: { color: '#cbdf90' }, // In Queue
+      5: { color: '#f5a65b' }, // Change Requests (Dev)
+      4: { color: '#768e70' }, // Template Dev
+      3: { color: '#b87b41' }, // Change Requests (QA)
+      2: { color: '#7f9c96' }, // Template QA
+      1: { color: '#4d7c8a' }, // AM Review
+      0: { color: '#1b4079' }  // Client Review
     }
   });
 }
