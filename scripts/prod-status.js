@@ -194,11 +194,11 @@ function handleWaveQueryResponse(response) {
 // }
 
 function drawActivityTable() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=A25:C35');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A25:B35&headers=1');
   query.send(handleActivityTableResponse);
 }
 
-function handleActivityTableResponse(reponse) {
+function handleActivityTableResponse(response) {
   if (response.isError()) {
     alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -209,5 +209,5 @@ function handleActivityTableResponse(reponse) {
   table.draw(activityData, {
     height: '100%',
     width: '100%',
-})
+  });
 }

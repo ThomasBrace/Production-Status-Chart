@@ -29,55 +29,56 @@
   </div><!-- .row -->
   <div class="clearfix"><hr></div>
   <div class="row align-items-center">
+    <h3 class="col-md-12 h2">Overview</h3>
     <div class="col-md-6">
-        <h3 class="h2">Template Status</h3>
-        <p>'Advanced' templates completed for the March 1.</p>
+        <h3 class="h4">Overview</h3>
         <div id="risk_chart"> <!-- "At Risk" Chart --></div>
     </div>
-    <div class="col">
-        <h3 class="h4">Wave One</h3>
-        <div id="waveone_chart" class="chart"><!-- Wave One Chart --></div>
+    <div class="col-md-6 justify-content-between">
+        <h3 class="h4">by Wave</h3>
+        <div id="waveone_chart" class="barchart"><!-- Wave One Chart --></div>
     </div>
-    <div class="col">
+    <!-- <div class="col">
         <h3 class="h4">Wave Two</h3>
-        <div id="wavetwo_chart" class="chart"><!-- Wave Two Chart --></div>
+        <div id="wavetwo_chart" class="chart"></div>
     </div>
     <div class="col">
         <h3 class="h4">Wave Three</h3>
-        <div id="wavethree_chart" class="chart"><!-- Wave Three Chart --></div>
-    </div>
+        <div id="wavethree_chart" class="chart"></div>
+    </div> -->
     <div class="col-md-6 align-self-start">
         <h3 class="h2">Development Status</h3>
         <p>Current status of the 'Advanced' templates within the development stage</p>
         <div id="status_chart"> <!-- Dev Status Chart --></div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
         <h3 class="h4">Development Status - Additional</h3>
         <p>Current status of 'Simple' & 'Medium' templates (including completed) handed over from 'The Studio' on March 5.</p>
         <div id="studio_chart"> <!-- Handed back Chart --></div>
     </div>
-  </div>
-
-  <div class="row">
-    <div id="dev_status"><!-- Dev Status Table--></div>
-  </div>
-  <div class="clearfix"><hr></div>
-  <div class="row">
-
   </div><!-- .row -->
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="h4">Active Team Members</h3>
+      <div id="dev_status"><!-- Dev Status Table--></div>
+    </div>
+  </div>
+  <hr>
 </div><!-- .container -->
 
 
 <script type="text/javascript" src="scripts/prod-status.js"></script>
 <script>
-    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.load('current', {packages: ['corechart', 'line', 'table']});
     google.charts.setOnLoadCallback(drawChart);
     google.charts.setOnLoadCallback(drawRiskChart);
     google.charts.setOnLoadCallback(drawStatusChart);
     google.charts.setOnLoadCallback(drawStudioChart);
     google.charts.setOnLoadCallback(drawWaveOneChart);
-    google.charts.setOnLoadCallback(drawWaveTwoChart);
-    google.charts.setOnLoadCallback(drawWaveThreeChart);
+    // google.charts.setOnLoadCallback(drawWaveTwoChart);
+    // google.charts.setOnLoadCallback(drawWaveThreeChart);
+    google.charts.setOnLoadCallback(drawActivityTable);
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
