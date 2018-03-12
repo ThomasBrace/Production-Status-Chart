@@ -146,50 +146,69 @@ function handleWaveQueryResponse(response) {
   });
 }
 
-function drawWaveTwoChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H251:I252');
-  query.send(handleWavetwoQueryResponse);
+// function drawWaveTwoChart() {
+//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H251:I252');
+//   query.send(handleWavetwoQueryResponse);
+// }
+//
+// function handleWavetwoQueryResponse(response) {
+//   if (response.isError()) {
+//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+//         return;
+//       }
+//
+//   var waveTwoData = response.getDataTable();
+//   var waveTwoChart = new google.visualization.PieChart(document.getElementById('wavetwo_chart'));
+//   waveTwoChart.draw(waveTwoData, {
+//     height: '100%',
+//     width: '100%',
+//     slices: {
+//       1: { color: '#f15152' },
+//       0: { color: '#dddddd' }
+//     },
+//     legend: 'none',
+//   });
+// }
+//
+// function drawWaveThreeChart() {
+//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H255:I256');
+//   query.send(handleWavethreeQueryResponse);
+// }
+//
+// function handleWavethreeQueryResponse(response) {
+//   if (response.isError()) {
+//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+//         return;
+//       }
+//
+//   var waveThreeData = response.getDataTable();
+//   var waveThreeChart = new  google.visualization.PieChart(document.getElementById('wavethree_chart'));
+//   waveThreeChart.draw(waveThreeData, {
+//     height: '100%',
+//     width: '100%',
+//     slices: {
+//       1: { color: '#f15152' },
+//       0: { color: '#dddddd' }
+//     },
+//     legend: 'none',
+//   });
+// }
+
+function drawActivityTable() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A25:B35&headers=1');
+  query.send(handleActivityTableResponse);
 }
 
-function handleWavetwoQueryResponse(response) {
+function handleActivityTableResponse(response) {
   if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
 
-  var waveTwoData = response.getDataTable();
-  var waveTwoChart = new google.visualization.PieChart(document.getElementById('wavetwo_chart'));
-  waveTwoChart.draw(waveTwoData, {
+  var activityData = response.getDataTable();
+  var table = new google.visualization.Table(document.getElementById('dev_status'));
+  table.draw(activityData, {
     height: '100%',
     width: '100%',
-    slices: {
-      1: { color: '#f15152' },
-      0: { color: '#dddddd' }
-    },
-    legend: 'none',
-  });
-}
-
-function drawWaveThreeChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H255:I256');
-  query.send(handleWavethreeQueryResponse);
-}
-
-function handleWavethreeQueryResponse(response) {
-  if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
-
-  var waveThreeData = response.getDataTable();
-  var waveThreeChart = new  google.visualization.PieChart(document.getElementById('wavethree_chart'));
-  waveThreeChart.draw(waveThreeData, {
-    height: '100%',
-    width: '100%',
-    slices: {
-      1: { color: '#f15152' },
-      0: { color: '#dddddd' }
-    },
-    legend: 'none',
   });
 }
