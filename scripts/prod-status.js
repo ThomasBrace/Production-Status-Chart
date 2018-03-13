@@ -257,6 +257,7 @@ function handleGaugeResponse(response) {
     majorTicks: ['','','','',''],
     minorTicks: 4,
     animation:{
+        "startup": true,
         duration: 2000,
         easing: 'inAndOut',
        },
