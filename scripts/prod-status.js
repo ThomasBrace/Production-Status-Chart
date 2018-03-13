@@ -230,3 +230,53 @@ function handleActivityTableResponse(response) {
     width: '100%',
   });
 }
+
+/////////////////////////////
+// Dev-Gauge
+/////////////////////////////
+function drawGauge() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D25:E35&headers=1');
+  query.send(handleGaugeResponse);
+}
+
+function handleGaugeResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+
+  var gaugeData = response.getDataTable();
+  var gauge = new google.visualization.Gauge(document.getElementById('gauge_div'));
+
+
+  var gaugeOptions = {
+    width: '100%', height: 350,
+    min: 1, max: 5,
+    redFrom: 4, redTo: 5,
+    yellowFrom: 2.5, yellowTo: 4,
+    majorTicks: ['','','','',''],
+    minorTicks: 4
+  };
+
+  gauge.draw(gaugeData, gaugeOptions);
+
+  function changeTemp(dir) {
+      gaugeData.setValue(0, 0, gaugeData.getValue(0, 0) + dir);
+      gaugeData.setValue(0, 1, gaugeData.getValue(0, 1) + dir);
+      gauge.draw(gaugeData, gaugeOptions);
+    }
+
+
+  // setInterval(function() {
+  //   gaugeData.setValue(0, 1, 4 + Math.round(2 * Math.random()));
+  //   gauge.draw(gaugeData, gaugeOptions);
+  // }, 1300);
+  // setInterval(function() {
+  //   gaugeData.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+  //   gauge.draw(data, options);
+  // }, 5000);
+  // setInterval(function() {
+  //   gaugeData.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+  //   gauge.draw(data, options);
+  // }, 26000);
+}
