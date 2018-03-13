@@ -255,28 +255,16 @@ function handleGaugeResponse(response) {
     redFrom: 4, redTo: 5,
     yellowFrom: 2.5, yellowTo: 4,
     majorTicks: ['','','','',''],
-    minorTicks: 4
+    minorTicks: 4,
+    animation:{
+        duration: 2000,
+        easing: 'inAndOut',
+       },
   };
 
   gauge.draw(gaugeData, gaugeOptions);
 
-  function changeTemp(dir) {
-      gaugeData.setValue(0, 0, gaugeData.getValue(0, 0) + dir);
-      gaugeData.setValue(0, 1, gaugeData.getValue(0, 1) + dir);
-      gauge.draw(gaugeData, gaugeOptions);
-    }
-
-
-  // setInterval(function() {
-  //   gaugeData.setValue(0, 1, 4 + Math.round(2 * Math.random()));
+  // setInterval(function(){
   //   gauge.draw(gaugeData, gaugeOptions);
-  // }, 1300);
-  // setInterval(function() {
-  //   gaugeData.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-  //   gauge.draw(data, options);
-  // }, 5000);
-  // setInterval(function() {
-  //   gaugeData.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-  //   gauge.draw(data, options);
-  // }, 26000);
+  // }, 2500)
 }

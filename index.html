@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="dashboard.css" type="text/css">
 </head>
-<body>
+<body onload="">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <nav class="navbar navbar-dark bg-dark">
@@ -54,7 +54,7 @@
         <div id="status_chart"> <!-- Dev Status Chart --></div>
     </div>
     <div class="col-md-6">
-        <h3 class="h2">Development Status - Additional</h3>
+        <h3 class="h2">Development Status - Overflow</h3>
         <p>Current status of 'The Studio' overflow handed over on March 5.</p>
         <div id="studio_chart"> <!-- Handed back Chart --></div>
     </div>
@@ -84,7 +84,7 @@
     google.charts.setOnLoadCallback(drawStatusChart);
     google.charts.setOnLoadCallback(drawStudioChart);
     google.charts.setOnLoadCallback(drawWaveOneChart);
-    google.charts.setOnLoadCallback(drawActivityTable);
+    // google.charts.setOnLoadCallback(drawActivityTable);
     google.charts.setOnLoadCallback(drawGauge);
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
