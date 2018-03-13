@@ -1,3 +1,6 @@
+/////////////////////////////
+// Original Production Chart
+/////////////////////////////
 function drawChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:G11&headers=1');
   query.send(handleQueryResponse);
@@ -40,6 +43,9 @@ function handleQueryResponse(response) {
     });
 }
 
+/////////////////////////////
+// Risk / Completed Pie Chart
+/////////////////////////////
 function drawRiskChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1g5luYrUbpFXWLCInZaWxr1bBU5Qv4i3XfJRzGnXa8bY/gviz/tq?gid=1952206665&range=M29:N32&headers=1');
   query.send(handleRiskQueryResponse);
@@ -64,6 +70,9 @@ function handleRiskQueryResponse(response) {
   });
 }
 
+/////////////////////////////
+// Dev Status chart
+/////////////////////////////
 function drawStatusChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
   query.send(handleStatusQueryResponse);
@@ -93,6 +102,9 @@ function handleStatusQueryResponse(response) {
   });
 }
 
+/////////////////////////////
+// Overflow Status Chart
+/////////////////////////////
 function drawStudioChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F253');
   query.send(handleStudioQueryResponse);
@@ -122,6 +134,9 @@ function handleStudioQueryResponse(response) {
   });
 }
 
+/////////////////////////////
+// 'By Wave' Chart
+/////////////////////////////
 function drawWaveOneChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=K246:M249');
   query.send(handleWaveQueryResponse);
@@ -146,54 +161,9 @@ function handleWaveQueryResponse(response) {
   });
 }
 
-// function drawWaveTwoChart() {
-//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H251:I252');
-//   query.send(handleWavetwoQueryResponse);
-// }
-//
-// function handleWavetwoQueryResponse(response) {
-//   if (response.isError()) {
-//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-//         return;
-//       }
-//
-//   var waveTwoData = response.getDataTable();
-//   var waveTwoChart = new google.visualization.PieChart(document.getElementById('wavetwo_chart'));
-//   waveTwoChart.draw(waveTwoData, {
-//     height: '100%',
-//     width: '100%',
-//     slices: {
-//       1: { color: '#f15152' },
-//       0: { color: '#dddddd' }
-//     },
-//     legend: 'none',
-//   });
-// }
-//
-// function drawWaveThreeChart() {
-//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=H255:I256');
-//   query.send(handleWavethreeQueryResponse);
-// }
-//
-// function handleWavethreeQueryResponse(response) {
-//   if (response.isError()) {
-//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-//         return;
-//       }
-//
-//   var waveThreeData = response.getDataTable();
-//   var waveThreeChart = new  google.visualization.PieChart(document.getElementById('wavethree_chart'));
-//   waveThreeChart.draw(waveThreeData, {
-//     height: '100%',
-//     width: '100%',
-//     slices: {
-//       1: { color: '#f15152' },
-//       0: { color: '#dddddd' }
-//     },
-//     legend: 'none',
-//   });
-// }
-
+/////////////////////////////
+// Dev-Active Status Table
+/////////////////////////////
 function drawActivityTable() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A25:B35&headers=1');
   query.send(handleActivityTableResponse);
