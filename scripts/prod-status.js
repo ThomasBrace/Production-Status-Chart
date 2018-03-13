@@ -86,7 +86,7 @@ function handleQueryResponse(response) {
          5: { lineDashStyle: [5, 2], color: '', visibleInLegend: false, dataOpacity: 0.1 },
          6: { color: 'black', lineWidth: 3}
      },
-     legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}}
+     legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}},
     });
 }
 
@@ -201,6 +201,10 @@ function handleWaveQueryResponse(response) {
   waveOneChart.draw(waveOneData, {
     height: '100%',
     width: '100%',
+    animation: {
+      startup: true,
+      duration: 1200,
+    },
     series: {
       1: { color: '#f15152' }, // On Going
       0: { color: '#dddddd' }, // Completed
@@ -259,7 +263,6 @@ function handleGaugeResponse(response) {
     animation:{
         "startup": true,
         duration: 2000,
-        easing: 'inAndOut',
        },
   };
 
