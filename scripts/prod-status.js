@@ -47,7 +47,7 @@
 // NEW Production Chart
 /////////////////////////////
 function drawChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:G11&headers=1');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:H11&headers=1');
   query.send(handleQueryResponse);
 }
 
@@ -69,7 +69,7 @@ function handleQueryResponse(response) {
   data.setValue(5, 1, 'March 1');
   data.setValue(5, 2, 'Risk free templates completed');
 
-  var chart = new google.visualization.LineChart(document.getElementById('combochart'));
+  var chart = new google.visualization.ComboChart(document.getElementById('combochart'));
   chart.draw(data, {
     height: '100%',
     width: '100%',
@@ -78,16 +78,18 @@ function handleQueryResponse(response) {
       style: 'line'
      },
      series: {
-         0: { color: '#cccccc' },
-         1: { color: '#f15152' },
+         0: { color: '', visibleInLegend: false },
+         1: { color: '#f15152', lineWidth: 3 },
          2: { type: 'bars', color: '#768e70' },
          3: { type: 'bars', color: '#f5a65b' },
-         4: { color: '#1b4079'},
-         5: { lineDashStyle: [5, 2], color: '1b4079', visibleInLegend: true }
+         4: { color: '#1b4079', lineWidth: 3},
+         5: { lineDashStyle: [5, 2], color: '', visibleInLegend: false, dataOpacity: 0.1 },
+         6: { color: 'black', lineWidth: 3}
      },
      legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}}
     });
 }
+
 
 /////////////////////////////
 // Risk / Completed Pie Chart
