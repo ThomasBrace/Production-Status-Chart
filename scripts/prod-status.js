@@ -254,7 +254,7 @@ function handleGaugeResponse(response) {
 
 
   var gaugeOptions = {
-    width: '100%', height: 350,
+    width: '100%', height: 300,
     min: 1, max: 5,
     redFrom: 4, redTo: 5,
     yellowFrom: 2.5, yellowTo: 4,
@@ -267,6 +267,44 @@ function handleGaugeResponse(response) {
   };
 
   gauge.draw(gaugeData, gaugeOptions);
+
+  // setInterval(function(){
+  //   gauge.draw(gaugeData, gaugeOptions);
+  // }, 2500)
+}
+
+/////////////////////////////
+// QA-Gauge
+/////////////////////////////
+function drawQAGauge() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D36:E36');
+  query.send(handleQAGaugeResponse);
+}
+
+function handleQAGaugeResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
+
+  var gaugeQAData = response.getDataTable();
+  var gaugeQA = new google.visualization.Gauge(document.getElementById('gauge_QA'));
+
+
+  var gaugeQAOptions = {
+    width: 400, height: 120,
+    min: 1, max: 10,
+    redFrom: 8, redTo: 10,
+    yellowFrom: 5, yellowTo: 8,
+    majorTicks: ['QUIET','','','','BUSY'],
+    minorTicks: 0,
+    animation:{
+        "startup": true,
+        duration: 2000,
+       },
+  };
+
+  gaugeQA.draw(gaugeQAData, gaugeQAOptions);
 
   // setInterval(function(){
   //   gauge.draw(gaugeData, gaugeOptions);
