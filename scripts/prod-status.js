@@ -258,7 +258,7 @@ function handleGaugeResponse(response) {
     min: 1, max: 5,
     redFrom: 4, redTo: 5,
     yellowFrom: 2.5, yellowTo: 4,
-    majorTicks: ['','','','',''],
+    majorTicks: ['1','2','3','4','5'],
     minorTicks: 4,
     animation:{
         "startup": true,
