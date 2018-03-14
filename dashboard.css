@@ -1,5 +1,8 @@
 /* Dashboard Specific CSS */
 
+nav.navbar {
+  margin-bottom: 1.5rem;
+}
 div.metrics {
   align-content: center;
   text-align: center;
