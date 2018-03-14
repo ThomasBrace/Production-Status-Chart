@@ -42,3 +42,12 @@ div.chart {
   width: 100%;
   min-height: 200px;
 }
+
+div.footer-copyright {
+  color: #fff;
+  font-size: smaller;
+}
+
+div.footer-copyright a {
+  color: #fff;
+}
