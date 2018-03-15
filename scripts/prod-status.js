@@ -118,8 +118,40 @@ function handleRiskQueryResponse(response) {
   });
 }
 
+// /////////////////////////////
+// // Dev Status Pie chart
+// /////////////////////////////
+// function drawStatusChart() {
+//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
+//   query.send(handleStatusQueryResponse);
+// }
+//
+// function handleStatusQueryResponse(response) {
+//   if (response.isError()) {
+//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+//         return;
+//       }
+//
+//   var statusData = response.getDataTable();
+//   var statusChart = new google.visualization.PieChart(document.getElementById('status_chart'));
+//   statusChart.draw(statusData, {
+//     width: 600,
+//     height: 400,
+//     slices: {
+//       7: { color: '#f15152' }, // On Hold
+//       6: { color: '#cbdf90' }, // In Queue
+//       5: { color: '#f5a65b' }, // Change Requests (Dev)
+//       4: { color: '#768e70' }, // Template Dev
+//       3: { color: '#b87b41' }, // Change Requests (QA)
+//       2: { color: '#7f9c96' }, // Template QA
+//       1: { color: '#4d7c8a' }, // AM Review
+//       0: { color: '#1b4079' }  // Client Review
+//     }
+//   });
+// }
+
 /////////////////////////////
-// Dev Status chart
+// NEW Dev Status Bar chart
 /////////////////////////////
 function drawStatusChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
@@ -133,25 +165,65 @@ function handleStatusQueryResponse(response) {
       }
 
   var statusData = response.getDataTable();
-  var statusChart = new google.visualization.PieChart(document.getElementById('status_chart'));
+
+  statusData.insertColumn( 2, {type: 'string', role: 'style'});
+  statusData.insertColumn( 3, {type: 'string', role: 'annotation'})
+  statusData.setValue(0,2,'color: #1b4079');
+  statusData.setValue(1,2,'color: #4d7c8a');
+  statusData.setValue(2,2,'color: #7f9c96');
+  statusData.setValue(3,2,'color: #b87b41');
+  statusData.setValue(4,2,'color: #768e70');
+  statusData.setValue(5,2,'color: #f5a65b');
+  statusData.setValue(6,2,'color: #cbdf90');
+  statusData.setValue(7,2,'color: #f15152');
+  statusData.setValue(7,3,'Pending master approval');
+
+  var statusChart = new google.visualization.BarChart(document.getElementById('status_chart'));
   statusChart.draw(statusData, {
     width: 600,
     height: 400,
-    slices: {
-      7: { color: '#f15152' }, // On Hold
-      6: { color: '#cbdf90' }, // In Queue
-      5: { color: '#f5a65b' }, // Change Requests (Dev)
-      4: { color: '#768e70' }, // Template Dev
-      3: { color: '#b87b41' }, // Change Requests (QA)
-      2: { color: '#7f9c96' }, // Template QA
-      1: { color: '#4d7c8a' }, // AM Review
-      0: { color: '#1b4079' }  // Client Review
-    }
+    legend: 'none',
+    animation: {
+      startup: true,
+      duration: 1200,
+    },
   });
 }
 
 /////////////////////////////
-// Overflow Status Chart
+// Overflow Status Pie Chart
+/////////////////////////////
+// function drawStudioChart() {
+//   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F253');
+//   query.send(handleStudioQueryResponse);
+// }
+//
+// function handleStudioQueryResponse(response) {
+//   if (response.isError()) {
+//         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+//         return;
+//       }
+//
+//   var studioData = response.getDataTable();
+//   var studioChart = new google.visualization.PieChart(document.getElementById('studio_chart'));
+//   studioChart.draw(studioData, {
+//     width: 600,
+//     height: 400,
+//     slices: {
+//       7: { color: '#f15152' }, // On Hold
+//       6: { color: '#cbdf90' }, // In Queue
+//       5: { color: '#f5a65b' }, // Change Requests (Dev)
+//       4: { color: '#768e70' }, // Template Dev
+//       3: { color: '#b87b41' }, // Change Requests (QA)
+//       2: { color: '#7f9c96' }, // Template QA
+//       1: { color: '#4d7c8a' }, // AM Review
+//       0: { color: '#1b4079' }  // Client Review
+//     }
+//   });
+// }
+
+/////////////////////////////
+// NEW Overflow Status Bar Chart
 /////////////////////////////
 function drawStudioChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F253');
@@ -165,20 +237,29 @@ function handleStudioQueryResponse(response) {
       }
 
   var studioData = response.getDataTable();
-  var studioChart = new google.visualization.PieChart(document.getElementById('studio_chart'));
+
+  studioData.insertColumn( 2, {type: 'string', role: 'style'});
+  studioData.insertColumn( 3, {type: 'string', role: 'annotation'})
+  studioData.setValue(0,2,'color: #1b4079');
+  studioData.setValue(1,2,'color: #4d7c8a');
+  studioData.setValue(2,2,'color: #7f9c96');
+  studioData.setValue(3,2,'color: #b87b41');
+  studioData.setValue(4,2,'color: #768e70');
+  studioData.setValue(5,2,'color: #f5a65b');
+  studioData.setValue(6,2,'color: #cbdf90');
+  studioData.setValue(7,2,'color: #f15152');
+  studioData.setValue(7,3,'Pending Issues');
+
+  var studioChart = new google.visualization.BarChart(document.getElementById('studio_chart'));
+
   studioChart.draw(studioData, {
     width: 600,
     height: 400,
-    slices: {
-      7: { color: '#f15152' }, // On Hold
-      6: { color: '#cbdf90' }, // In Queue
-      5: { color: '#f5a65b' }, // Change Requests (Dev)
-      4: { color: '#768e70' }, // Template Dev
-      3: { color: '#b87b41' }, // Change Requests (QA)
-      2: { color: '#7f9c96' }, // Template QA
-      1: { color: '#4d7c8a' }, // AM Review
-      0: { color: '#1b4079' }  // Client Review
-    }
+    legend: 'none',
+    animation: {
+      startup: true,
+      duration: 1200,
+    },
   });
 }
 
