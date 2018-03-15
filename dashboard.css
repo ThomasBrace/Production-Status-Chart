@@ -36,9 +36,14 @@ div#overview_panel {
   padding-bottom: 20px;
 }
 
-div.barchart {
+div.combochart {
   width: 100%;
   min-height: 400px;
+}
+
+div.barchart {
+  width: 100%;
+  min-height: 300px;
 }
 
 div.chart {
