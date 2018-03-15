@@ -291,10 +291,10 @@ function handleQAGaugeResponse(response) {
 
   var gaugeQAOptions = {
     width: 400, height: 120,
-    min: 1, max: 10,
+    min: 0, max: 10,
     redFrom: 8, redTo: 10,
     yellowFrom: 5, yellowTo: 8,
-    majorTicks: ['QUIET','','','','BUSY'],
+    majorTicks: ['QUIET','','','','','BUSY'],
     minorTicks: 0,
     animation:{
         "startup": true,
