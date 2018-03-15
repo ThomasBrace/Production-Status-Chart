@@ -252,13 +252,12 @@ function handleGaugeResponse(response) {
   var gaugeData = response.getDataTable();
   var gauge = new google.visualization.Gauge(document.getElementById('gauge_div'));
 
-
   var gaugeOptions = {
     width: '100%', height: 300,
-    min: 1, max: 5,
+    min: 0, max: 5,
     redFrom: 4, redTo: 5,
     yellowFrom: 2.5, yellowTo: 4,
-    majorTicks: ['1','2','3','4','5'],
+    majorTicks: ['0','1','2','3','4','5'],
     minorTicks: 4,
     animation:{
         "startup": true,
@@ -289,7 +288,6 @@ function handleQAGaugeResponse(response) {
 
   var gaugeQAData = response.getDataTable();
   var gaugeQA = new google.visualization.Gauge(document.getElementById('gauge_QA'));
-
 
   var gaugeQAOptions = {
     width: 400, height: 120,
