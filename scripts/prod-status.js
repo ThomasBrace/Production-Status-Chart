@@ -179,7 +179,6 @@ function handleStatusQueryResponse(response) {
   statusData.setValue(5,2,'color: #f5a65b');
   statusData.setValue(6,2,'color: #cbdf90');
   statusData.setValue(7,2,'color: #f15152');
-  statusData.setValue(7,3,'Pending master approval');
 
   var statusChart = new google.visualization.BarChart(document.getElementById('status_chart'));
   statusChart.draw(statusData, {
@@ -251,7 +250,6 @@ function handleStudioQueryResponse(response) {
   studioData.setValue(5,2,'color: #f5a65b');
   studioData.setValue(6,2,'color: #cbdf90');
   studioData.setValue(7,2,'color: #f15152');
-  studioData.setValue(7,3,'Pending Issues');
 
   var studioChart = new google.visualization.BarChart(document.getElementById('studio_chart'));
 
