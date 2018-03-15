@@ -48,6 +48,7 @@
 /////////////////////////////
 function drawChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:H11&headers=1');
+  query.setRefreshInterval(5);
   query.send(handleQueryResponse);
 }
 
@@ -96,6 +97,7 @@ function handleQueryResponse(response) {
 /////////////////////////////
 function drawRiskChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1g5luYrUbpFXWLCInZaWxr1bBU5Qv4i3XfJRzGnXa8bY/gviz/tq?gid=1952206665&range=M29:N32&headers=1');
+  query.setRefreshInterval(5);
   query.send(handleRiskQueryResponse);
 }
 
@@ -155,6 +157,7 @@ function handleRiskQueryResponse(response) {
 /////////////////////////////
 function drawStatusChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=B246:C253');
+  query.setRefreshInterval(5);
   query.send(handleStatusQueryResponse);
 }
 
@@ -184,8 +187,7 @@ function handleStatusQueryResponse(response) {
     height: 400,
     legend: 'none',
     animation: {
-      startup: true,
-      duration: 1200,
+      duration: 1200
     },
   });
 }
@@ -227,6 +229,7 @@ function handleStatusQueryResponse(response) {
 /////////////////////////////
 function drawStudioChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=E246:F253');
+  query.setRefreshInterval(5);
   query.send(handleStudioQueryResponse);
 }
 
@@ -257,8 +260,7 @@ function handleStudioQueryResponse(response) {
     height: 400,
     legend: 'none',
     animation: {
-      startup: true,
-      duration: 1200,
+      duration: 1200
     },
   });
 }
@@ -268,6 +270,7 @@ function handleStudioQueryResponse(response) {
 /////////////////////////////
 function drawWaveOneChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1313464239&range=K246:M249');
+  query.setRefreshInterval(5);
   query.send(handleWaveQueryResponse);
 }
 
@@ -283,8 +286,7 @@ function handleWaveQueryResponse(response) {
     height: '100%',
     width: '100%',
     animation: {
-      startup: true,
-      duration: 1200,
+      duration: 1200
     },
     series: {
       1: { color: '#f15152' }, // On Going
@@ -299,6 +301,7 @@ function handleWaveQueryResponse(response) {
 /////////////////////////////
 function drawActivityTable() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A25:B35&headers=1');
+  query.setRefreshInterval(5);
   query.send(handleActivityTableResponse);
 }
 
@@ -321,6 +324,7 @@ function handleActivityTableResponse(response) {
 /////////////////////////////
 function drawGauge() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D25:E35&headers=1');
+  query.setRefreshInterval(5);
   query.send(handleGaugeResponse);
 }
 
@@ -341,8 +345,7 @@ function handleGaugeResponse(response) {
     majorTicks: ['0','1','2','3','4','5'],
     minorTicks: 4,
     animation:{
-        "startup": true,
-        duration: 2000,
+        duration: 1000
        },
   };
 
@@ -358,6 +361,7 @@ function handleGaugeResponse(response) {
 /////////////////////////////
 function drawQAGauge() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D36:E36');
+  query.setRefreshInterval(5);
   query.send(handleQAGaugeResponse);
 }
 
