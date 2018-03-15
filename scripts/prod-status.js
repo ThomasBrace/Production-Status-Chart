@@ -374,7 +374,7 @@ function handleQAGaugeResponse(response) {
     width: 400, height: 120,
     min: 0, max: 10,
     redFrom: 8, redTo: 10,
-    yellowFrom: 5, yellowTo: 8,
+    yellowFrom: 4, yellowTo: 8,
     majorTicks: ['QUIET','','','','','BUSY'],
     minorTicks: 0,
     animation:{
