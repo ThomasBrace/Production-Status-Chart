@@ -188,6 +188,9 @@ function handleStatusQueryResponse(response) {
     animation: {
       duration: 1200
     },
+    hAxis: {
+      minValue: 4,
+    }
   });
 }
 
@@ -258,8 +261,11 @@ function handleStudioQueryResponse(response) {
     height: 400,
     legend: 'none',
     animation: {
-      duration: 1200
+      duration: 1200,
     },
+    hAxis: {
+      minValue: 4,
+    }
   });
 }
 
