@@ -189,7 +189,7 @@ function handleStatusQueryResponse(response) {
       duration: 1200
     },
     hAxis: {
-      minValue: 4,
+      minValue: 8,
     }
   });
 }
@@ -264,7 +264,7 @@ function handleStudioQueryResponse(response) {
       duration: 1200,
     },
     hAxis: {
-      minValue: 4,
+      minValue: 8,
     }
   });
 }
