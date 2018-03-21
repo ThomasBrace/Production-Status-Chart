@@ -47,7 +47,7 @@
 // NEW Production Chart
 /////////////////////////////
 function drawChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:H11&headers=1');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=M1:R11&headers=1');
   query.setRefreshInterval(5);
   query.send(handleQueryResponse);
 }
@@ -79,15 +79,56 @@ function handleQueryResponse(response) {
       style: 'line'
      },
      series: {
-         0: { color: '', visibleInLegend: false },
-         1: { color: '#f15152', lineWidth: 3 },
-         2: { type: 'bars', color: '#768e70' },
-         3: { type: 'bars', color: '#f5a65b' },
-         4: { color: '#1b4079', lineWidth: 3},
-         5: { lineDashStyle: [5, 2], color: '', visibleInLegend: false, dataOpacity: 0.1 },
-         6: { color: 'black', lineWidth: 3}
+         0: { type: 'bars', color: '#768e70' }, // Sent Weekly
+         1: { type: 'bars', color: '#f5a65b' }, // Change sent
+         2: { color: '#f15152', lineWidth: 3 }, // Sent Total
+         3: { color: '#1b4079', lineWidth: 3},  // Approved
+         4: { color: 'black', lineWidth: 3}     // Change requested
      },
-     legend: {position: 'right', textStyle: {color: 'dark-gray', fontSize: 12}},
+     legend: {position: 'bottom', textStyle: {color: 'dark-gray', fontSize: 12}},
+    });
+}
+
+/////////////////////////////
+// NEW Production Chart
+/////////////////////////////
+function drawHoursChart() {
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=I1:K11&headers=1');
+  query.setRefreshInterval(5);
+  query.send(handleHoursQueryResponse);
+}
+
+function handleHoursQueryResponse(response) {
+  if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+  var hoursData = response.getDataTable();
+  hoursData.insertColumn( 1, {
+    type: 'string',
+    role: 'annotation'
+  });
+  hoursData.insertColumn( 2, {
+    type: 'string',
+    role: 'annotationText'
+  });
+  hoursData.setValue(5, 1, 'March 1');
+  hoursData.setValue(5, 2, 'Risk free templates completed');
+
+  var hoursChart = new google.visualization.ComboChart(document.getElementById('hourschart'));
+  hoursChart.draw(hoursData, {
+    height: '100%',
+    width: '100%',
+    isStacked: true,
+    annotations: {
+      style: 'line'
+     },
+     series: {
+         0: { color: '#768e70', type: 'bars' },
+         1: { color: '#cccccc', type: 'bars'}
+     },
+     legend: {position: 'bottom', textStyle: {color: 'dark-gray', fontSize: 12}},
     });
 }
 

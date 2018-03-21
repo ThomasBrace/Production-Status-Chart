@@ -22,15 +22,20 @@
       <h1 class="display-4">Production Dashboard</h1>
     </div>
   </div><!-- .row -->
-  <hr>
+  <hr class="my-5">
   <div class="row">
       <div class="col-md-12">
         <h3 class="h2">Template Production Status</h3>
         <p>Status of the 'Advanced' templates in production with Elateral. Week by week breakdown of templates completed and sent to the client for review.</p>
       </div>
       <div id="combochart" class="combochart"><!-- Production Status Chart --></div>
+      <!-- <div class="col-md-12">
+        <h3 class="h2">Production Hours Used</h3>
+        <p>Development and QA time only</p>
+      </div>
+      <div id="hourschart" class="combochart mb-5"></div> -->
   </div><!-- .row -->
-  <div class="clearfix"><hr></div>
+  <hr class="my-5">
   <div class="row align-items-center">
     <h3 class="col-md-12 h2">Overview</h3>
     <div class="col-md-6">
@@ -60,7 +65,7 @@
         <div id="studio_chart" class="barchart"> <!-- Handed back Chart --></div>
     </div>
   </div><!-- .row -->
-  <hr>
+  <hr class="my-5">
   <div class="row">
     <h3 class="h2 col-md-12">Template Development Team</h3>
     <div class="col-md-3">
@@ -132,6 +137,7 @@
 <script>
     google.charts.load('current', {packages: ['corechart', 'line', 'table', 'gauge']});
     google.charts.setOnLoadCallback(drawChart);
+    //google.charts.setOnLoadCallback(drawHoursChart);
     google.charts.setOnLoadCallback(drawRiskChart);
     google.charts.setOnLoadCallback(drawStatusChart);
     google.charts.setOnLoadCallback(drawStudioChart);
