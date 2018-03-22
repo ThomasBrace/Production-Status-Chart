@@ -89,7 +89,7 @@ function handleHoursQueryResponse(response) {
 
 
 /////////////////////////////
-// Risk / Completed Pie Chart
+// Overview Pie Chart
 /////////////////////////////
 function drawRiskChart() {
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1g5luYrUbpFXWLCInZaWxr1bBU5Qv4i3XfJRzGnXa8bY/gviz/tq?gid=1952206665&range=M29:N32&headers=1');
@@ -106,8 +106,8 @@ function handleRiskQueryResponse(response) {
   var riskData = response.getDataTable();
   var riskChart = new google.visualization.PieChart(document.getElementById('risk_chart'));
   riskChart.draw(riskData, {
-    width: 600,
-    height: 400,
+    width: '100%',
+    height: '100%',
     chartArea: {
       left: 30,
       top: 20
