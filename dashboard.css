@@ -1,8 +1,9 @@
 /* Dashboard Specific CSS */
 
-nav.navbar {
-  margin-bottom: 1.5rem;
-}
+/* body {
+  background-color: #708CAE;
+} */
+
 div.metrics {
   align-content: center;
   text-align: center;
@@ -31,6 +32,18 @@ div.metric-positive {
   color: #4d7c8a;
 }
 
+div#container {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  z-index: 999;
+  background-color: #fff;
+}
+
+div#headline {
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
+}
+
 div#overview_panel {
   padding-top: 10px;
   padding-bottom: 20px;
@@ -44,6 +57,8 @@ div.combochart {
 div.barchart {
   width: 100%;
   min-height: 300px;
+  z-index: -999;
+  overflow: hidden;
 }
 
 div.chart {
