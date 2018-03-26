@@ -68,8 +68,12 @@ function handleHoursQueryResponse(response) {
     type: 'string',
     role: 'annotationText'
   });
-  hoursData.setValue(5, 1, 'March 1');
-  hoursData.setValue(5, 2, 'Risk free templates completed');
+  hoursData.setValue(5, 1, 'March 1 Deadline');
+  hoursData.setValue(5, 2, 'Advanced Templates Due');
+  hoursData.setValue(6, 1, 'Overflow received');
+  hoursData.setValue(6, 2, '17x \'Overflow\' templates received');
+  hoursData.setValue(8, 1, 'Overflow received');
+  hoursData.setValue(8, 2, '4x \'Overflow\' templates received');
 
   var hoursChart = new google.visualization.ComboChart(document.getElementById('hourschart'));
   hoursChart.draw(hoursData, {
@@ -77,7 +81,7 @@ function handleHoursQueryResponse(response) {
     width: '100%',
     isStacked: true,
     annotations: {
-      style: 'line'
+      style: 'line',
      },
      series: {
          0: { color: '#768e70', type: 'bars' },
