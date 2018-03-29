@@ -211,7 +211,7 @@ function handleStudioQueryResponse(response) {
       minValue: 8,
     },
     chartArea: {
-      top: 35
+      top: 20
     },
   });
 }
