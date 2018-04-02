@@ -2,7 +2,7 @@
 // NEW Production Chart
 /////////////////////////////
 function drawChart() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:F11&headers=1');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=A1:F12&headers=1');
   query.setRefreshInterval(5);
   query.send(handleQueryResponse);
 }
