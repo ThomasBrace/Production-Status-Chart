@@ -278,7 +278,7 @@ function handleActivityTableResponse(response) {
 // Dev-Gauge
 /////////////////////////////
 function drawGauge() {
-  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D25:E35&headers=1');
+  var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16q-bSvIapnCXyqv3YU5fO4M2xDf1GxATscDXPjf8xGY/gviz/tq?gid=1078118238&range=D25:E32&headers=1');
   query.setRefreshInterval(5);
   query.send(handleGaugeResponse);
 }
